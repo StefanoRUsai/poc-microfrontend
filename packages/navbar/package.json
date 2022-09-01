@@ -35,7 +35,7 @@
   },
   "scripts": {
     "start": "webpack serve --no-open",
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.config.js",
     "serve": "serve dist -p 3002",
     "clean": "rm -rf dist"
   },
