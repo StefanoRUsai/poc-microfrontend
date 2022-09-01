@@ -12,11 +12,14 @@ module.exports = (env, argv) => {
   return {
     entry: "./src/index.ts",
     output: {
-      publicPath: 'auto'
+      path: path.resolve(__dirname, 'dist'),
+      filename: 'index_bundle.js',
+      publicPath: '/'
     },
     mode: process.env.NODE_ENV || "development",
     devServer: {
       port: 3000,
+      historyApiFallback: true,
       static: {
         directory: path.join(__dirname, "dist"),
       },
@@ -53,6 +56,9 @@ module.exports = (env, argv) => {
     },
 
     plugins: [
+      new HtmlWebpackPlugin({
+        template: 'public/index.html'
+      }),
       new webpack.EnvironmentPlugin({ BUILD_DATE: buildDate }),
       new webpack.DefinePlugin({
         "process.env": JSON.stringify(process.env),
