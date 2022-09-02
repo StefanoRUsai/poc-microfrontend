@@ -2,6 +2,10 @@
 # OS Specific
 .DS_Store
 .DS_Store?
+/packages/**/DS_store
+packages/**/.DS_Store
+/packages/**/DS_store?
+packages/**/.DS_Store?
 ._*
 .Spotlight-V100
 .Trashes
