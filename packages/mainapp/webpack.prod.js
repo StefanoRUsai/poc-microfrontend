@@ -87,11 +87,18 @@ module.exports = (env, argv) => {
             eager: true,
             requiredVersion: deps["react-dom"],
           },
-          "@material-ui/styles": {
+          "@mui/styles": {
+            singleton: true,
+          },
+          "@mui/material": {
             singleton: true,
           },
           "@emotion/core": {
             singleton: true,
+          },
+          "@emotion/react": {
+            singleton: true,
+            requiredVersion: deps["@emotion/react"],
           },
           "@emotion/styled": {
             singleton: true,
